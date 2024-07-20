@@ -90,7 +90,7 @@ section {
 
 .home p {
     font-size: 1.2rem;
-    margin: 1rem 0;
+    margin: 1rem 5rem;
 }
 
 .home .btn {
@@ -104,6 +104,16 @@ section {
 
 .home .btn:hover {
     background-color: #ff4500;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //height: 100vh;
+    background: url('images/') no-repeat center center/cover;
+    //color: white;
 }
 
 .about, .projects, .skills, .contact {
@@ -190,7 +200,7 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.2rem 0;
     position: fixed;
     bottom: 0;
     width: 100%;

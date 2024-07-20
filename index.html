@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdwhXnA5z08f9auE1H8Z0pHwft1l1q7ltR3H5gcmOc2RWNSv9Zm7T3kZJZT1y6t8KhZ/hR5CnQU/YXXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">MyPortfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdwhXnA5z08f9auE1H8Z0pHwft1l1q7ltR3H5gcmOc2RWNSv9Zm7T3kZJZT1y6t8KhZ/hR5CnQU/YXXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">MyPortfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="cv/CV.pdf" class="btn" download>Download CV</a></li>
+                </ul>
+                <div class="burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
 
     <section id="home" class="home">
         <div class="home-content">
@@ -31,58 +32,57 @@
             <p>Discover my work and projects</p>
             <a href="#projects" class="btn">View Projects</a>
         </div>
-        <img src="images/home.jpg" alt="Home Image">
     </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="images/about.jpg" alt="About Me">
-        <p>This is a brief introduction about myself. I am passionate about web development and design.</p>
-    </section>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <img src="images/about.jpg" alt="About Me">
+            <p>This is a brief introduction about myself. I am passionate about web development and design.</p>
+        </section>
 
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project">
-                <h3>Project 1</h3>
-                <img src="images/project1.jpg" alt="Project 1">
-                <p>Description of project 1.</p>
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <p>Description of project 1.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <p>Description of project 2.</p>
+                </div>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <img src="images/project2.jpg" alt="Project 2">
-                <p>Description of project 2.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-        </ul>
-    </section>
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
 
-    <footer>
-        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+        </footer>
 
-    <script src="scripts.js"></script>
-</body>
+        <script src="scripts.js"></script>
+    </body>
 </html>
