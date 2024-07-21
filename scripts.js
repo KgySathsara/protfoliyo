@@ -32,3 +32,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const movingName = document.getElementById("moving-name");
+    let position = 0;
+    let direction = 1;
+
+    function move() {
+        position += direction;
+        if (position > 50 || position < 0) {
+            direction *= -1;
+        }
+        movingName.style.left = position + '%';
+        requestAnimationFrame(move);
+    }
+
+    move();
+});

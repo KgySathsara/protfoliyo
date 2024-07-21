@@ -112,8 +112,18 @@ section {
     align-items: center;
     justify-content: center;
     //height: 100vh;
-    background: url('images/') no-repeat center center/cover;
+    background: url('.images/index.jpeg') no-repeat center center/cover;
     //color: white;
+    text-align: center;
+    margin: 20px;
+}
+
+.profile-photo {
+    width:300px; /* Adjust size as needed */
+    height: 0px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .about, .projects, .skills, .contact {
