@@ -1,3 +1,4 @@
+/* Your existing CSS */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -106,6 +107,23 @@ section {
     background-color: #ff4500;
 }
 
+#moving-name {
+    position: relative;
+    animation: moveName 10s linear infinite;
+}
+
+@keyframes moveName {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
 .about {
     display: flex;
     flex-direction: column;
@@ -119,8 +137,8 @@ section {
 }
 
 .profile-photo {
-    width:300px; /* Adjust size as needed */
-    height: 0px; /* Adjust size as needed */
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
