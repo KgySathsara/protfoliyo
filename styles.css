@@ -1,13 +1,18 @@
-/* Your existing CSS */
-body {
-    font-family: 'Roboto', sans-serif;
+/* General Reset */
+body, h2, ul, li {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
     background-color: #f4f4f4;
     color: #333;
 }
 
+/* Header Styling */
 header {
     background-color: #333;
     color: white;
@@ -64,6 +69,7 @@ nav ul li a:hover {
     color: white;
 }
 
+/* Section Styling */
 section {
     padding: 100px 2rem 2rem;
     text-align: center;
@@ -142,6 +148,7 @@ section {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    background: url('images/myphoto.jpg') no-repeat center center/cover;
 }
 
 .about, .projects, .skills, .contact {
@@ -173,20 +180,35 @@ section {
     border-radius: 10px;
 }
 
-.skills ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Enhanced Skills Section */
+.skills {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.skills ul li {
-    background-color: #ff6347;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    border-radius: 5px;
+.skills ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills li {
+    background: #ffffff;
+    border: 2px solid #6c757d;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #495057;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.skills li:hover {
+    background: #6c757d;
+    color: #ffffff;
+    transform: translateY(-5px);
 }
 
 .contact form {
