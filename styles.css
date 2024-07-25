@@ -148,7 +148,7 @@ section {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    background: url('images/myphoto.jpg') no-repeat center center/cover;
+    //background: url('images/myphoto.jpg') no-repeat center center/cover;
 }
 
 .about, .projects, .skills, .contact {
