@@ -130,17 +130,73 @@ section {
     }
 }
 
-.about {
+/* General Styles for the About Section */
+.about-section {
+    background-color: #f4f4f4; /* Light background color for contrast */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Flexbox Layout for About Content */
+.about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //height: 100vh;
-    background: url('.images/index.jpeg') no-repeat center center/cover;
-    //color: white;
-    text-align: center;
-    margin: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
 }
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Styling */
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 700px;
+    color: #555;
+}
+
+.about-text b {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-text {
+        max-width: 600px;
+        text-align: left;
+    }
+}
+
 
 .profile-photo {
     width: 300px; /* Adjust size as needed */
