@@ -138,7 +138,7 @@ section {
 }
 
 .about-section h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #333;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -303,14 +303,27 @@ section {
 }
 
 footer {
+    text-align: center;
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 0.2rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
 }
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -341,3 +354,43 @@ footer {
         background-color: rgba(0, 0, 0, 0.7);
     }
 }
+
+/* Burger Icon Styling */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Mobile View - Hide nav links by default */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    /* Show burger icon */
+    .burger {
+        display: block;
+    }
+
+    /* Show nav links when active */
+    nav ul.active {
+        display: flex;
+    }
+}
+
