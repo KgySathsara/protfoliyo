@@ -17,11 +17,10 @@ I hold a B.Sc in Computer Science from the University of Jaffna. With experience
 
 Here's a snapshot of the skills I bring to the table:
 
-- **Frontend:** HTML, CSS, JavaScript, React Js, Vue Js
-- **Backend:** Node Js, PHP, Laravel, Spring Boot
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:**  PHP
 - **Databases:** MySQL
 - **Design:** Figma, Adobe XD
-- **Languages:** Java, TypeScript
 - **Tools & Platforms:** Git, Docker, AWS
 
 ## Projects
