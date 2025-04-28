@@ -47,11 +47,64 @@
         section {
             padding: 80px 0;
         }
+
+        .github-invite {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            color: var(--dark);
+        }
+
+        .github-link {
+            color: var(--primary);
+            font-weight: 600;
+            margin-left: 8px;
+            text-decoration: none;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        
+        /* Added mobile responsive section padding */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 40px 0;
+            }
+        }
     
         .section-title {
             text-align: center;
             margin-bottom: 60px;
             position: relative;
+        }
+        
+        /* Mobile responsive section title */
+        @media (max-width: 768px) {
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem !important;
+            }
         }
     
         .section-title h2 {
@@ -106,7 +159,7 @@
         }
     
         .logo img {
-            height: 40px;
+            height: 80px;
             width: auto;
             border-radius: 50%;
             transition: var(--transition);
@@ -210,6 +263,7 @@
                 box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.1);
                 padding: 30px;
                 border-radius: 0 15px 15px 0;
+                z-index: 1001; /* Added z-index to ensure it appears above other content */
             }
     
             .nav-links.active {
@@ -269,6 +323,38 @@
         .home-content .btn {
             margin-top: 20px;
         }
+        
+        /* Mobile responsive hero section */
+        @media (max-width: 768px) {
+            .home-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .home-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .home-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .home-content p {
+                font-size: 1rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80% !important;
+            }
+        }
     
         /* Buttons */
         .btn {
@@ -283,6 +369,7 @@
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
             border: none;
             cursor: pointer;
+            margin: 0 5px;
         }
     
         .btn:hover {
@@ -333,6 +420,35 @@
             color: var(--dark);
             font-weight: 500;
         }
+        
+        /* Mobile responsive about section */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-photo {
+                width: 300px;
+                height: 300px;
+                margin-bottom: 30px;
+            }
+            
+            .about-text .btn-group {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-photo {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .about-text {
+                font-size: 1rem;
+            }
+        }
     
         /* Projects Section */
         .projects {
@@ -343,6 +459,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
+        }
+        
+        /* Mobile responsive project grid */
+        @media (max-width: 480px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     
         .project {
@@ -378,6 +501,21 @@
         .project p {
             margin-bottom: 15px;
             color: #666;
+        }
+        
+        /* Mobile responsive project content */
+        @media (max-width: 480px) {
+            .project-content {
+                padding: 20px;
+            }
+            
+            .project h3 {
+                font-size: 1.2rem;
+            }
+            
+            .project ul {
+                padding-left: 20px;
+            }
         }
     
         /* Skills Section */
@@ -415,6 +553,19 @@
         .skill-card i {
             font-size: 1.5rem;
             color: var(--primary);
+        }
+        
+        /* Mobile responsive skills */
+        @media (max-width: 480px) {
+            .skills-container {
+                gap: 15px;
+            }
+            
+            .skill-card {
+                padding: 15px 20px;
+                width: calc(50% - 15px);
+                justify-content: center;
+            }
         }
     
         /* Contact Section */
@@ -463,6 +614,19 @@
             min-height: 150px;
             resize: vertical;
         }
+        
+        /* Mobile responsive contact form */
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 20px;
+            }
+        }
     
         /* Footer */
         footer {
@@ -500,6 +664,19 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        
+        /* Mobile responsive achievements */
+        /* @media (max-width: 768px) {
+            .achievements-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .achievements-container {
+                grid-template-columns: 1fr;
+            }
+        } */
 
         .achievement-card {
             background: white;
@@ -530,6 +707,17 @@
         .achievement-card p {
             color: #666;
             margin-bottom: 0;
+        }
+        
+        /* Mobile responsive achievement cards */
+        @media (max-width: 480px) {
+            .achievement-card {
+                padding: 25px;
+            }
+            
+            .achievement-card h3 {
+                font-size: 1.3rem;
+            }
         }
 
         /* Stats Counter Section */
@@ -564,7 +752,84 @@
             font-size: 1.1rem;
             opacity: 0.9;
         }
-    </style>
+        
+        /* Mobile responsive stats */
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                margin: 15px 0;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Back to top button - Add this section */
+        .back-to-top {
+            position: fixed;
+            bottom: -60px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            z-index: 99;
+        }
+        
+        .back-to-top.active {
+            bottom: 30px;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Github link styles */
+        .github-invite {
+            margin-top: -30px;
+            margin-bottom: 40px;
+        }
+        
+        .github-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
     </style>
     
 </head>
@@ -639,12 +904,12 @@
         <div class="container">
             <div class="section-title">
                 <h2>My Projects</h2>
-                <p class="github-invite fade-in">You can visit my GitHub Account to explore all my projects 
-                    <a href="https://github.com/KgySathsara" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> KgySathsara
-                    </a>
-                </p>
             </div>
+            <p class="github-invite fade-in ">You can visit my GitHub Account to explore all my projects 
+                <a href="https://github.com/KgySathsara" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> KgySathsara
+                </a>
+            </p>
             <div class="project-grid">
                 <!-- Project 1 - eTicket System -->
                 <div class="project fade-in">
@@ -759,6 +1024,7 @@
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- Skills Section -->
