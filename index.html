@@ -129,52 +129,6 @@
             100% { transform: translateY(100vh); opacity: 0; }
         }
 
-        /* Glitch Text Effect */
-        .glitch {
-            position: relative;
-            animation: glitch 5s infinite;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            animation: glitch-top 1s infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-        }
-
-        .glitch::after {
-            animation: glitch-bottom 1.5s infinite;
-            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-        }
-
-        @keyframes glitch {
-            2%, 64% { transform: translate(2px, 0) skew(0deg); }
-            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
-            62% { transform: translate(0, 0) skew(5deg); }
-        }
-
-        @keyframes glitch-top {
-            2%, 64% { transform: translate(2px, -2px); }
-            4%, 60% { transform: translate(-2px, 2px); }
-            62% { transform: translate(13px, -1px) skew(-13deg); }
-        }
-
-        @keyframes glitch-bottom {
-            2%, 64% { transform: translate(-2px, 0); }
-            4%, 60% { transform: translate(-2px, 0); }
-            62% { transform: translate(-22px, 5px) skew(21deg); }
-        }
-
         /* Navigation - Cyberpunk Style */
         nav {
             position: fixed;
@@ -237,7 +191,7 @@
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             list-style: none;
         }
 
@@ -673,11 +627,13 @@
             color: var(--light);
         }
 
-        /* Skills - Radial Progress */
+        /* Skills Section - FIXED FOR MOBILE */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .skill-radial {
@@ -702,6 +658,11 @@
             margin: 0 auto 25px;
         }
 
+        .radial-progress svg {
+            width: 100%;
+            height: 100%;
+        }
+
         .radial-inner {
             position: absolute;
             top: 50%;
@@ -723,7 +684,7 @@
         }
 
         .skill-name {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--light);
@@ -731,7 +692,8 @@
 
         .skill-desc {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         /* Timeline for Experience */
@@ -988,10 +950,16 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 1200px) {
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
         }
 
@@ -1005,9 +973,41 @@
                 max-width: 500px;
                 margin: 0 auto;
             }
+            
+            .hero-content {
+                padding: 40px 25px;
+            }
+            
+            .contact-form {
+                padding: 40px 30px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+            }
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            /* Navigation */
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1020,6 +1020,7 @@
                 gap: 25px;
                 transition: all 0.4s ease;
                 backdrop-filter: blur(20px);
+                z-index: 999;
             }
 
             .nav-links.active {
@@ -1042,51 +1043,115 @@
                 transform: rotate(-45deg) translate(7px, -7px);
             }
 
+            /* Hero Section */
+            #home {
+                padding-top: 80px;
+            }
+            
+            .hero-content {
+                padding: 35px 20px;
+                margin: 15px;
+                backdrop-filter: blur(15px);
+            }
+            
+            .hero-cover-photo {
+                opacity: 0.1;
+                filter: blur(0.5px);
+            }
+            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
-
+            
             .btn {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+                padding: 15px 25px;
             }
 
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-right: 0;
-                padding-left: 70px;
-            }
-
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-                padding-left: 70px;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -40px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
+            /* About Section */
             .about-stats {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-card {
+                padding: 20px;
             }
 
+            /* Projects Section */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .project-image {
+                height: 200px;
+            }
+
+            /* Skills Section - MOBILE FIX */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .skill-radial {
+                padding: 35px 25px;
+            }
+            
+            .radial-progress {
+                width: 130px;
+                height: 130px;
+                margin: 0 auto 20px;
+            }
+            
+            .radial-inner {
+                width: 100px;
+                height: 100px;
+                font-size: 1.8rem;
+            }
+            
+            .skill-name {
+                font-size: 1.3rem;
+            }
+            
+            .skill-desc {
+                font-size: 0.95rem;
+            }
+
+            /* Achievements Section */
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .achievement-card {
+                padding: 30px 25px;
+            }
+
+            /* Footer */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .social-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            /* Section Padding */
             section {
                 padding: 80px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 50px;
             }
         }
 
@@ -1094,23 +1159,24 @@
             .container {
                 padding: 0 20px;
             }
-
+            
+            /* Hero Section */
             .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .contact-form {
-                padding: 30px 20px;
+                font-size: clamp(2.5rem, 6vw, 4rem);
             }
             
+            .hero-subtitle {
+                font-size: clamp(1rem, 4vw, 1.4rem);
+                margin-bottom: 30px;
+            }
+            
+            .hero-content {
+                padding: 30px 15px;
+                border-radius: 20px;
+                margin: 10px;
+            }
+
+            /* About Section */
             .about-image::before {
                 top: -10px;
                 left: -10px;
@@ -1118,8 +1184,119 @@
                 bottom: 10px;
             }
             
-            .achievement-card {
+            .about-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content p {
+                font-size: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            /* Skills Section - SMALL MOBILE FIX */
+            .skills-grid {
+                gap: 25px;
+            }
+            
+            .skill-radial {
                 padding: 30px 20px;
+            }
+            
+            .radial-progress {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .radial-inner {
+                width: 90px;
+                height: 90px;
+                font-size: 1.6rem;
+            }
+            
+            .skill-name {
+                font-size: 1.2rem;
+            }
+            
+            .skill-desc {
+                font-size: 0.9rem;
+            }
+
+            /* Contact Form */
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .form-control {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+            
+            .submit-btn {
+                padding: 15px 30px;
+                font-size: 0.95rem;
+            }
+
+            /* Section Titles */
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .section-badge {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+
+            /* Back to Top */
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 0.9rem;
+            }
+            
+            /* Navigation Logo */
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .logo span {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .skills-grid {
+                gap: 20px;
+            }
+            
+            .skill-radial {
+                padding: 25px 15px;
+            }
+            
+            .radial-progress {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .radial-inner {
+                width: 85px;
+                height: 85px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1150,7 +1327,7 @@
                 <li><a href="#skills" class="nav-item">Skills</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
                 <li><a href="#achievements" class="nav-item">Achievements</a></li>
-                <li><a href="./images/CV1.pdf" class="nav-btn"><i class="fas fa-download"></i> Download CV</a></li>
+                <li><a href="#contact" class="nav-btn"><i class="fas fa-download"></i> Download CV</a></li>
             </ul>
             <div class="burger" id="burger">
                 <span></span>
@@ -1285,7 +1462,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - FIXED FOR MOBILE -->
     <section id="skills">
         <div class="container">
             <div class="section-header">
@@ -1714,6 +1891,17 @@
                 
                 el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
             });
+        });
+        
+        // Window resize handler for matrix rain
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const matrixContainer = document.getElementById('matrix');
+                matrixContainer.innerHTML = '';
+                createMatrixRain();
+            }, 250);
         });
     </script>
 </body>
