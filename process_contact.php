@@ -1,126 +1,98 @@
 <?php
-function sendMail($to, $subject, $message, $headers = '')
-{
-    $smtpServer = 'smtp.gmail.com';
-    $port = 465; // Use port 465 for SSL
-    $username = 'yohansathsara87@gmail.com';
-    $password = 'easn nlac lbnn rytd';
+declare(strict_types=1);
 
-    $contextOptions = [
-        'ssl' => [
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true,
-        ],
+header('Content-Type: application/json; charset=UTF-8');
+
+function respond(int $statusCode, array $payload): never
+{
+    http_response_code($statusCode);
+    echo json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    respond(405, [
+        'success' => false,
+        'message' => 'Only POST requests are allowed.'
+    ]);
+}
+
+$name = trim((string) ($_POST['name'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$subject = trim((string) ($_POST['subject'] ?? ''));
+$message = trim((string) ($_POST['message'] ?? ''));
+
+if ($name === '' || $email === '' || $message === '') {
+    respond(422, [
+        'success' => false,
+        'message' => 'Please complete the required form fields.'
+    ]);
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    respond(422, [
+        'success' => false,
+        'message' => 'Please enter a valid email address.'
+    ]);
+}
+
+$entry = [
+    'submitted_at' => gmdate('c'),
+    'name' => $name,
+    'email' => $email,
+    'subject' => $subject,
+    'message' => $message,
+    'ip_address' => $_SERVER['REMOTE_ADDR'] ?? 'unknown'
+];
+
+$storageDir = __DIR__ . DIRECTORY_SEPARATOR . 'storage';
+$logFile = $storageDir . DIRECTORY_SEPARATOR . 'contact-submissions.jsonl';
+
+if (!is_dir($storageDir) && !mkdir($storageDir, 0775, true) && !is_dir($storageDir)) {
+    respond(500, [
+        'success' => false,
+        'message' => 'Unable to prepare contact storage on the server.'
+    ]);
+}
+
+$written = file_put_contents(
+    $logFile,
+    json_encode($entry, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . PHP_EOL,
+    FILE_APPEND | LOCK_EX
+);
+
+if ($written === false) {
+    respond(500, [
+        'success' => false,
+        'message' => 'Unable to store your message right now.'
+    ]);
+}
+
+$recipient = trim((string) getenv('PORTFOLIO_CONTACT_TO'));
+$emailNotice = '';
+
+if ($recipient !== '') {
+    $mailSubject = $subject !== '' ? "Portfolio inquiry: {$subject}" : "Portfolio inquiry from {$name}";
+    $mailBody = "Name: {$name}\n"
+        . "Email: {$email}\n"
+        . "Subject: {$subject}\n\n"
+        . $message . "\n";
+
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Reply-To: ' . $email,
+        'X-Mailer: PHP/' . phpversion()
     ];
 
-    $context = stream_context_create($contextOptions);
-    $socket = stream_socket_client("ssl://$smtpServer:$port", $errno, $errstr, 10, STREAM_CLIENT_CONNECT, $context);
+    $sent = @mail($recipient, $mailSubject, $mailBody, implode("\r\n", $headers));
 
-    if (!$socket) {
-        echo "Connection failed: $errstr ($errno)";
-        return false;
+    if (!$sent) {
+        $emailNotice = ' Your message was saved, but server email delivery is not configured yet.';
     }
-
-    function serverResponse($socket, $expectedCode)
-    {
-        while ($response = fgets($socket, 515)) {
-            $code = substr($response, 0, 3);
-            if ($code == $expectedCode) {
-                return true;
-            }
-            if ($code != '250' && $code != '220') {
-                echo "Unexpected response from server: $response";
-                return false;
-            }
-        }
-        return false;
-    }
-
-    if (!serverResponse($socket, '220')) return false;
-
-    fwrite($socket, "EHLO $smtpServer\r\n");
-    if (!serverResponse($socket, '250')) return false;
-
-    fwrite($socket, "AUTH LOGIN\r\n");
-    if (!serverResponse($socket, '334')) return false;
-    fwrite($socket, base64_encode($username) . "\r\n");
-    if (!serverResponse($socket, '334')) return false;
-    fwrite($socket, base64_encode($password) . "\r\n");
-    if (!serverResponse($socket, '235')) return false;
-
-    fwrite($socket, "MAIL FROM: <$username>\r\n");
-    if (!serverResponse($socket, '250')) return false;
-
-    fwrite($socket, "RCPT TO: <$to>\r\n");
-    if (!serverResponse($socket, '250')) return false;
-
-    fwrite($socket, "DATA\r\n");
-    if (!serverResponse($socket, '354')) return false;
-
-    fwrite($socket, "Subject: $subject\r\n$headers\r\n\r\n$message\r\n.\r\n");
-    if (!serverResponse($socket, '250')) return false;
-
-    fwrite($socket, "QUIT\r\n");
-    if (!serverResponse($socket, '221')) return false;
-
-    fclose($socket);
-
-    echo "Message sent successfully!";
-    return true;
 }
 
-// Usage in your form handling script
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database configuration
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "contact_form_db";
-
-    // Collect and sanitize form data
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
-
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format";
-        exit;
-    }
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $message);
-
-    // Execute the statement
-    if ($stmt->execute()) {
-        $to = "your_email@gmail.com";
-        $subject = "New Contact Message from $name";
-        $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-        $headers = "From: $email\r\n";
-
-        if (sendMail($to, $subject, $body, $headers)) {
-            echo "Message sent and saved successfully!";
-        } else {
-            echo "Message saved but failed to send email.";
-        }
-    } else {
-        echo "Failed to save message.";
-    }
-
-    // Close the statement and connection
-    $stmt->close();
-    $conn->close();
-} else {
-    echo "Invalid request method.";
-}
-?>
+respond(200, [
+    'success' => true,
+    'message' => 'Thanks for reaching out. Your message has been saved successfully.' . $emailNotice
+]);
