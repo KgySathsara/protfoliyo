@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">Monitoring dashboard illustration</title>
+  <desc id="desc">A system monitor dashboard with uptime indicators, metrics, and alerts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101a32"/>
+      <stop offset="100%" stop-color="#122b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7ec6ff"/>
+      <stop offset="100%" stop-color="#66f6db"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="34" fill="url(#bg)"/>
+  <circle cx="676" cy="106" r="96" fill="#7ec6ff" opacity="0.12"/>
+  <rect x="56" y="54" width="688" height="452" rx="28" fill="#0d1427" opacity="0.95" stroke="#ffffff" stroke-opacity="0.08"/>
+  <rect x="82" y="82" width="640" height="40" rx="20" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="108" y="108" fill="#dff1ff" font-size="16" font-family="Arial, sans-serif">KGY Monitor</text>
+  <circle cx="612" cy="102" r="7" fill="#66f6db"/>
+  <text x="626" y="108" fill="#bbdfef" font-size="12" font-family="Arial, sans-serif">Healthy</text>
+  <circle cx="696" cy="102" r="7" fill="#f5b971"/>
+  <text x="710" y="108" fill="#bbdfef" font-size="12" font-family="Arial, sans-serif">Sync</text>
+
+  <rect x="84" y="148" width="188" height="108" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="108" y="184" fill="#dff1ff" font-size="17" font-family="Arial, sans-serif">Uptime</text>
+  <text x="108" y="226" fill="#ffffff" font-size="36" font-family="Arial, sans-serif">99.9%</text>
+  <rect x="108" y="236" width="112" height="12" rx="6" fill="url(#accent)" opacity="0.82"/>
+
+  <rect x="292" y="148" width="188" height="108" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="316" y="184" fill="#dff1ff" font-size="17" font-family="Arial, sans-serif">Requests</text>
+  <text x="316" y="226" fill="#ffffff" font-size="36" font-family="Arial, sans-serif">18.4k</text>
+  <text x="316" y="246" fill="#a4c7d9" font-size="12" font-family="Arial, sans-serif">Last 24 hours</text>
+
+  <rect x="500" y="148" width="220" height="108" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="524" y="184" fill="#dff1ff" font-size="17" font-family="Arial, sans-serif">Nodes</text>
+  <rect x="524" y="206" width="56" height="24" rx="12" fill="#66f6db" fill-opacity="0.2"/>
+  <text x="540" y="223" fill="#dffaf7" font-size="12" font-family="Arial, sans-serif">API</text>
+  <rect x="592" y="206" width="56" height="24" rx="12" fill="#7ec6ff" fill-opacity="0.22"/>
+  <text x="607" y="223" fill="#e4f4ff" font-size="12" font-family="Arial, sans-serif">DB</text>
+  <rect x="660" y="206" width="36" height="24" rx="12" fill="#ff7c7c" fill-opacity="0.22"/>
+  <text x="670" y="223" fill="#ffe1e1" font-size="12" font-family="Arial, sans-serif">1</text>
+
+  <rect x="84" y="280" width="396" height="200" rx="24" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="110" y="316" fill="#dff1ff" font-size="18" font-family="Arial, sans-serif">Traffic Trend</text>
+  <polyline points="120,420 168,392 216,406 264,352 312,366 360,320 408,338 456,302"
+    fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="456" cy="302" r="8" fill="#66f6db"/>
+  <line x1="120" y1="444" x2="456" y2="444" stroke="#ffffff" stroke-opacity="0.08"/>
+  <line x1="120" y1="344" x2="456" y2="344" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <rect x="500" y="280" width="220" height="200" rx="24" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="526" y="316" fill="#dff1ff" font-size="18" font-family="Arial, sans-serif">Alerts</text>
+  <rect x="526" y="340" width="168" height="40" rx="16" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="548" cy="360" r="7" fill="#ff7c7c"/>
+  <text x="566" y="365" fill="#ffffff" font-size="13" font-family="Arial, sans-serif">CPU spike detected</text>
+  <rect x="526" y="392" width="168" height="40" rx="16" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="548" cy="412" r="7" fill="#f5b971"/>
+  <text x="566" y="417" fill="#ffffff" font-size="13" font-family="Arial, sans-serif">Queue lag warning</text>
+  <rect x="526" y="444" width="168" height="14" rx="7" fill="#ffffff" fill-opacity="0.05"/>
+</svg>

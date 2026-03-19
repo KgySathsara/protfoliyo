@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">eTicket system illustration</title>
+  <desc id="desc">A stack of digital event tickets with a QR code and validation scanner.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#3b2218"/>
+      <stop offset="100%" stop-color="#24130f"/>
+    </linearGradient>
+    <linearGradient id="ticket" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5b971"/>
+      <stop offset="100%" stop-color="#ffd9a4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="34" fill="url(#bg)"/>
+  <circle cx="660" cy="108" r="90" fill="#f5b971" opacity="0.12"/>
+  <rect x="72" y="58" width="656" height="444" rx="30" fill="#1e120e" opacity="0.94" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <g transform="translate(180 170) rotate(-8 180 90)">
+    <rect x="0" y="0" width="360" height="180" rx="28" fill="#fff4e1" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="0" cy="90" r="18" fill="#1e120e"/>
+    <circle cx="360" cy="90" r="18" fill="#1e120e"/>
+  </g>
+  <g transform="translate(220 144) rotate(6 180 90)">
+    <rect x="0" y="0" width="360" height="180" rx="28" fill="#fff4e1" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="0" cy="90" r="18" fill="#1e120e"/>
+    <circle cx="360" cy="90" r="18" fill="#1e120e"/>
+  </g>
+  <g transform="translate(172 162)">
+    <rect x="0" y="0" width="420" height="208" rx="30" fill="url(#ticket)"/>
+    <circle cx="0" cy="104" r="22" fill="#1e120e"/>
+    <circle cx="420" cy="104" r="22" fill="#1e120e"/>
+    <rect x="34" y="34" width="210" height="20" rx="10" fill="#7a4d18" fill-opacity="0.24"/>
+    <text x="36" y="92" fill="#4c2b0d" font-size="34" font-family="Arial, sans-serif">Weekend Live</text>
+    <text x="36" y="126" fill="#5b3613" font-size="17" font-family="Arial, sans-serif">Zone A  Row 04  Seat 18</text>
+    <text x="36" y="158" fill="#5b3613" font-size="15" font-family="Arial, sans-serif">Saturday 7:30 PM</text>
+    <rect x="292" y="34" width="94" height="94" rx="18" fill="#fff8ef" fill-opacity="0.82"/>
+    <rect x="308" y="50" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="328" y="50" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="348" y="50" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="308" y="70" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="348" y="70" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="328" y="90" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="368" y="90" width="16" height="16" fill="#4c2b0d"/>
+    <rect x="36" y="180" width="350" height="2" fill="#4c2b0d" fill-opacity="0.18"/>
+  </g>
+
+  <rect x="580" y="238" width="104" height="146" rx="26" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.06"/>
+  <rect x="606" y="266" width="52" height="70" rx="18" fill="#fff0db" fill-opacity="0.18"/>
+  <rect x="616" y="280" width="32" height="8" rx="4" fill="#f5b971"/>
+  <rect x="616" y="296" width="32" height="8" rx="4" fill="#f5b971" opacity="0.8"/>
+  <rect x="616" y="312" width="24" height="8" rx="4" fill="#f5b971" opacity="0.55"/>
+  <path d="M598 362 L620 384 L666 334" fill="none" stroke="#66f6db" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="590" y="410" fill="#f9e7cc" font-size="18" font-family="Arial, sans-serif">Validated</text>
+</svg>

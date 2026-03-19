@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">Gym management system illustration</title>
+  <desc id="desc">A fitness operations dashboard showing members, attendance, and plan tracking.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b2e22"/>
+      <stop offset="100%" stop-color="#114935"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#66f6db"/>
+      <stop offset="100%" stop-color="#8cedba"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="34" fill="url(#bg)"/>
+  <circle cx="112" cy="98" r="96" fill="#8cedba" opacity="0.12"/>
+  <rect x="58" y="54" width="684" height="452" rx="28" fill="#0c231b" opacity="0.94" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <rect x="84" y="82" width="222" height="154" rx="24" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="110" y="118" fill="#dbfff3" font-size="18" font-family="Arial, sans-serif">Active Members</text>
+  <text x="110" y="176" fill="#ffffff" font-size="46" font-family="Arial, sans-serif">248</text>
+  <rect x="110" y="194" width="92" height="18" rx="9" fill="url(#accent)" opacity="0.8"/>
+  <text x="214" y="208" fill="#a8d8c6" font-size="12" font-family="Arial, sans-serif">+18 this month</text>
+
+  <rect x="326" y="82" width="392" height="154" rx="24" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="352" y="118" fill="#dbfff3" font-size="18" font-family="Arial, sans-serif">Check-in Activity</text>
+  <rect x="366" y="176" width="42" height="32" rx="12" fill="url(#accent)" opacity="0.45"/>
+  <rect x="422" y="160" width="42" height="48" rx="12" fill="url(#accent)" opacity="0.62"/>
+  <rect x="478" y="140" width="42" height="68" rx="12" fill="url(#accent)" opacity="0.82"/>
+  <rect x="534" y="150" width="42" height="58" rx="12" fill="url(#accent)" opacity="0.68"/>
+  <rect x="590" y="128" width="42" height="80" rx="12" fill="url(#accent)" opacity="0.94"/>
+  <rect x="646" y="168" width="42" height="40" rx="12" fill="url(#accent)" opacity="0.48"/>
+  <text x="366" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Mon</text>
+  <text x="422" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Tue</text>
+  <text x="478" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Wed</text>
+  <text x="534" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Thu</text>
+  <text x="590" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Fri</text>
+  <text x="646" y="224" fill="#94c7b5" font-size="12" font-family="Arial, sans-serif">Sat</text>
+
+  <rect x="84" y="262" width="300" height="218" rx="24" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="110" y="298" fill="#dbfff3" font-size="18" font-family="Arial, sans-serif">Membership Plans</text>
+  <rect x="110" y="320" width="248" height="40" rx="18" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="132" y="346" fill="#ffffff" font-size="15" font-family="Arial, sans-serif">Monthly</text>
+  <text x="302" y="346" fill="#8cedba" font-size="14" font-family="Arial, sans-serif">112</text>
+  <rect x="110" y="376" width="248" height="40" rx="18" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="132" y="402" fill="#ffffff" font-size="15" font-family="Arial, sans-serif">Quarterly</text>
+  <text x="300" y="402" fill="#8cedba" font-size="14" font-family="Arial, sans-serif">74</text>
+  <rect x="110" y="432" width="248" height="40" rx="18" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="132" y="458" fill="#ffffff" font-size="15" font-family="Arial, sans-serif">Annual</text>
+  <text x="308" y="458" fill="#8cedba" font-size="14" font-family="Arial, sans-serif">62</text>
+
+  <rect x="408" y="262" width="310" height="218" rx="24" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="434" y="298" fill="#dbfff3" font-size="18" font-family="Arial, sans-serif">Today Schedule</text>
+  <rect x="434" y="322" width="258" height="54" rx="18" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="462" cy="349" r="16" fill="url(#accent)" opacity="0.78"/>
+  <text x="490" y="346" fill="#ffffff" font-size="15" font-family="Arial, sans-serif">Strength Training</text>
+  <text x="490" y="366" fill="#9ccdbd" font-size="13" font-family="Arial, sans-serif">06:00 AM  18 members</text>
+  <rect x="434" y="392" width="258" height="54" rx="18" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="462" cy="419" r="16" fill="url(#accent)" opacity="0.56"/>
+  <text x="490" y="416" fill="#ffffff" font-size="15" font-family="Arial, sans-serif">Cardio Session</text>
+  <text x="490" y="436" fill="#9ccdbd" font-size="13" font-family="Arial, sans-serif">07:30 PM  22 members</text>
+</svg>
